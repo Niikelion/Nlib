@@ -1,0 +1,447 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="Nlib" />
+		<Option makefile="makefile" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="test">
+				<Option output="Nlibtest" prefix_auto="1" extension_auto="1" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-std=c++11" />
+					<Add option="-g" />
+					<Add directory="nlib/utility" />
+				</Compiler>
+				<Linker>
+					<Add library="Ndebug" />
+					<Add directory="bin" />
+				</Linker>
+			</Target>
+			<Target title="test_r">
+				<Option output="RT/Nlibtest" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="RT" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-fomit-frame-pointer" />
+					<Add option="-fexpensive-optimizations" />
+					<Add option="-O3" />
+					<Add option="-std=c++11" />
+					<Add directory="../Nlib" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+					<Add library="Ngem" />
+					<Add library="Nutil" />
+					<Add directory="bin" />
+				</Linker>
+			</Target>
+			<Target title="utility_d">
+				<Option output="bin/Nutil-d" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="" />
+				<Option type="2" />
+				<Option compiler="gcc" />
+				<Option createDefFile="1" />
+				<Compiler>
+					<Add option="-g" />
+					<Add directory="nlib/utility" />
+				</Compiler>
+			</Target>
+			<Target title="utility_s">
+				<Option output="bin/Nutil" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="" />
+				<Option type="2" />
+				<Option compiler="gcc" />
+				<Option createDefFile="1" />
+				<Compiler>
+					<Add option="-fomit-frame-pointer" />
+					<Add option="-fexpensive-optimizations" />
+					<Add option="-O3" />
+					<Add directory="nlib/utility" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+			<Target title="geometry_d">
+				<Option output="bin/Ngem-d" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="" />
+				<Option type="2" />
+				<Option compiler="gcc" />
+				<Option createDefFile="1" />
+				<Compiler>
+					<Add option="-g" />
+					<Add directory="include" />
+					<Add directory="nlib/geometry/" />
+					<Add directory="nlib/geometry" />
+				</Compiler>
+				<Linker>
+					<Add library="bin/utility/debug/libNutil_d.a" />
+					<Add directory="bin" />
+				</Linker>
+			</Target>
+			<Target title="geometry_s">
+				<Option output="bin/Ngem" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="" />
+				<Option type="2" />
+				<Option compiler="gcc" />
+				<Option createDefFile="1" />
+				<Compiler>
+					<Add option="-fomit-frame-pointer" />
+					<Add option="-fexpensive-optimizations" />
+					<Add option="-O3" />
+					<Add directory="../Nlib" />
+					<Add directory="include" />
+					<Add directory="nlib/geometry/" />
+					<Add directory="nlib/geometry" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+					<Add library="bin/utility/release/libNutil_s.a" />
+					<Add directory="bin" />
+				</Linker>
+			</Target>
+			<Target title="script_d">
+				<Option output="bin/Nsl-d" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="" />
+				<Option type="2" />
+				<Option compiler="gcc" />
+				<Option createDefFile="1" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="script_s">
+				<Option output="bin/Nsl" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="" />
+				<Option type="2" />
+				<Option compiler="gcc" />
+				<Option createDefFile="1" />
+				<Compiler>
+					<Add option="-fomit-frame-pointer" />
+					<Add option="-fexpensive-optimizations" />
+					<Add option="-O3" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+			<Target title="debug_d">
+				<Option output="bin/Ndebug-d" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="" />
+				<Option type="2" />
+				<Option compiler="gcc" />
+				<Option createDefFile="1" />
+				<Compiler>
+					<Add option="-g" />
+					<Add directory="nlib/debug" />
+				</Compiler>
+			</Target>
+			<Target title="debug_s">
+				<Option output="bin/Ndebug" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="" />
+				<Option type="2" />
+				<Option compiler="gcc" />
+				<Option createDefFile="1" />
+				<Compiler>
+					<Add option="-fomit-frame-pointer" />
+					<Add option="-fexpensive-optimizations" />
+					<Add option="-O3" />
+					<Add directory="nlib/debug" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+			<Target title="slib_d">
+				<Option output="bin/Nslib-d" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="" />
+				<Option type="2" />
+				<Option compiler="gcc" />
+				<Option createDefFile="1" />
+				<Compiler>
+					<Add option="-g" />
+					<Add directory="nlib/utility" />
+				</Compiler>
+			</Target>
+			<Target title="slib_s">
+				<Option output="bin/Nslib" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="" />
+				<Option type="2" />
+				<Option compiler="gcc" />
+				<Option createDefFile="1" />
+				<Compiler>
+					<Add option="-fomit-frame-pointer" />
+					<Add option="-fexpensive-optimizations" />
+					<Add option="-O3" />
+					<Add directory="nlib/utility" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<VirtualTargets>
+			<Add alias="all" targets="utility_d;utility_s;geometry_d;geometry_s;script_d;script_s;debug_d;debug_s;slib_d;slib_s;" />
+			<Add alias="debug" targets="debug_d;debug_s;" />
+			<Add alias="geometry" targets="geometry_d;geometry_s;" />
+			<Add alias="script" targets="script_d;script_s;" />
+			<Add alias="slib" targets="slib_d;slib_s;" />
+			<Add alias="utility" targets="utility_d;utility_s;" />
+		</VirtualTargets>
+		<Compiler>
+			<Add option="-Winline" />
+			<Add option="-Wunreachable-code" />
+			<Add option="-Wextra" />
+			<Add option="-Wall" />
+			<Add option="-std=c++11" />
+			<Add directory="../Nlib" />
+		</Compiler>
+		<Linker>
+			<Add directory="/bin" />
+		</Linker>
+		<Unit filename="nlib/debug/callable.h">
+			<Option target="debug_d" />
+			<Option target="debug_s" />
+		</Unit>
+		<Unit filename="nlib/debug/types.h">
+			<Option target="debug_d" />
+			<Option target="debug_s" />
+		</Unit>
+		<Unit filename="nlib/geometry.h">
+			<Option target="geometry_d" />
+			<Option target="geometry_s" />
+		</Unit>
+		<Unit filename="nlib/geometry/frame.h">
+			<Option target="geometry_d" />
+			<Option target="geometry_s" />
+		</Unit>
+		<Unit filename="nlib/geometry/plane.h">
+			<Option target="geometry_d" />
+			<Option target="geometry_s" />
+		</Unit>
+		<Unit filename="nlib/geometry/point.h">
+			<Option target="geometry_d" />
+			<Option target="geometry_s" />
+		</Unit>
+		<Unit filename="nlib/geometry/shapesgen.h">
+			<Option target="geometry_d" />
+			<Option target="geometry_s" />
+		</Unit>
+		<Unit filename="nlib/geometry/triangle.h">
+			<Option target="geometry_d" />
+			<Option target="geometry_s" />
+		</Unit>
+		<Unit filename="nlib/geometry/triangulate.h">
+			<Option target="geometry_d" />
+			<Option target="geometry_s" />
+		</Unit>
+		<Unit filename="nlib/geometry/vec.h">
+			<Option target="geometry_d" />
+			<Option target="geometry_s" />
+		</Unit>
+		<Unit filename="nlib/nlib.h">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="nlib/script/mathscr.h">
+			<Option target="script_d" />
+			<Option target="script_s" />
+		</Unit>
+		<Unit filename="nlib/script/nsl.h">
+			<Option target="script_d" />
+			<Option target="script_s" />
+		</Unit>
+		<Unit filename="nlib/slib/slib.h">
+			<Option target="slib_d" />
+			<Option target="slib_s" />
+		</Unit>
+		<Unit filename="nlib/utility.h">
+			<Option target="utility_d" />
+			<Option target="utility_s" />
+			<Option target="slib_d" />
+		</Unit>
+		<Unit filename="nlib/utility/arrwrap.h">
+			<Option target="utility_d" />
+			<Option target="utility_s" />
+			<Option target="slib_d" />
+		</Unit>
+		<Unit filename="nlib/utility/convert.h">
+			<Option target="utility_d" />
+			<Option target="utility_s" />
+			<Option target="slib_d" />
+		</Unit>
+		<Unit filename="nlib/utility/err11.h">
+			<Option target="utility_d" />
+			<Option target="utility_s" />
+			<Option target="slib_d" />
+		</Unit>
+		<Unit filename="nlib/utility/errors.h">
+			<Option target="utility_d" />
+			<Option target="utility_s" />
+			<Option target="slib_d" />
+		</Unit>
+		<Unit filename="nlib/utility/flags.h">
+			<Option target="utility_d" />
+			<Option target="utility_s" />
+			<Option target="slib_d" />
+		</Unit>
+		<Unit filename="nlib/utility/formatting.h">
+			<Option target="utility_d" />
+			<Option target="utility_s" />
+			<Option target="slib_d" />
+		</Unit>
+		<Unit filename="nlib/utility/init.h">
+			<Option target="utility_d" />
+			<Option target="utility_s" />
+			<Option target="slib_d" />
+		</Unit>
+		<Unit filename="nlib/utility/lint.h">
+			<Option target="utility_d" />
+			<Option target="utility_s" />
+			<Option target="slib_d" />
+		</Unit>
+		<Unit filename="nlib/utility/mtype.h">
+			<Option target="utility_d" />
+			<Option target="utility_s" />
+			<Option target="slib_d" />
+		</Unit>
+		<Unit filename="nlib/utility/nullutil.h">
+			<Option target="utility_d" />
+			<Option target="utility_s" />
+			<Option target="geometry_d" />
+			<Option target="geometry_s" />
+			<Option target="slib_d" />
+		</Unit>
+		<Unit filename="nlib/utility/premath.h">
+			<Option target="utility_d" />
+			<Option target="utility_s" />
+			<Option target="slib_d" />
+		</Unit>
+		<Unit filename="nlib/utility/reference.h">
+			<Option target="utility_d" />
+			<Option target="utility_s" />
+			<Option target="slib_d" />
+		</Unit>
+		<Unit filename="nlib/utility/stringtree.h">
+			<Option target="utility_d" />
+			<Option target="utility_s" />
+			<Option target="slib_d" />
+		</Unit>
+		<Unit filename="src/debug/callable.cpp">
+			<Option target="debug_d" />
+			<Option target="debug_s" />
+		</Unit>
+		<Unit filename="src/debug/types.cpp">
+			<Option target="debug_d" />
+			<Option target="debug_s" />
+		</Unit>
+		<Unit filename="src/geometry/POINT.CPP">
+			<Option target="geometry_d" />
+			<Option target="geometry_s" />
+		</Unit>
+		<Unit filename="src/geometry/frame.cpp">
+			<Option target="geometry_d" />
+			<Option target="geometry_s" />
+		</Unit>
+		<Unit filename="src/geometry/plane.cpp">
+			<Option target="geometry_d" />
+			<Option target="geometry_s" />
+		</Unit>
+		<Unit filename="src/geometry/shapesgen.cpp">
+			<Option target="geometry_d" />
+			<Option target="geometry_s" />
+		</Unit>
+		<Unit filename="src/geometry/triangle.cpp">
+			<Option target="geometry_d" />
+			<Option target="geometry_s" />
+		</Unit>
+		<Unit filename="src/geometry/triangulate.cpp">
+			<Option target="geometry_d" />
+			<Option target="geometry_s" />
+		</Unit>
+		<Unit filename="src/geometry/vec.cpp">
+			<Option target="geometry_d" />
+			<Option target="geometry_s" />
+		</Unit>
+		<Unit filename="src/script/mathscr.cpp">
+			<Option target="script_d" />
+			<Option target="script_s" />
+		</Unit>
+		<Unit filename="src/script/nsl.cpp">
+			<Option target="script_d" />
+			<Option target="script_s" />
+		</Unit>
+		<Unit filename="src/slib/slib.cpp">
+			<Option target="slib_d" />
+			<Option target="slib_s" />
+		</Unit>
+		<Unit filename="src/utility/arrwrap.cpp">
+			<Option target="utility_d" />
+			<Option target="utility_s" />
+			<Option target="slib_d" />
+		</Unit>
+		<Unit filename="src/utility/convert.cpp">
+			<Option target="utility_d" />
+			<Option target="utility_s" />
+			<Option target="slib_d" />
+		</Unit>
+		<Unit filename="src/utility/errors.cpp">
+			<Option target="utility_d" />
+			<Option target="utility_s" />
+			<Option target="slib_d" />
+		</Unit>
+		<Unit filename="src/utility/flags.cpp">
+			<Option target="utility_d" />
+			<Option target="utility_s" />
+			<Option target="slib_d" />
+		</Unit>
+		<Unit filename="src/utility/formatting.cpp">
+			<Option target="utility_d" />
+			<Option target="utility_s" />
+			<Option target="slib_d" />
+		</Unit>
+		<Unit filename="src/utility/init.cpp">
+			<Option target="utility_d" />
+			<Option target="utility_s" />
+			<Option target="slib_d" />
+		</Unit>
+		<Unit filename="src/utility/lint.cpp">
+			<Option target="utility_d" />
+			<Option target="utility_s" />
+			<Option target="slib_d" />
+		</Unit>
+		<Unit filename="src/utility/mtype.cpp">
+			<Option target="utility_d" />
+			<Option target="utility_s" />
+			<Option target="slib_d" />
+		</Unit>
+		<Unit filename="src/utility/premath.cpp">
+			<Option target="utility_d" />
+			<Option target="utility_s" />
+			<Option target="slib_d" />
+		</Unit>
+		<Unit filename="test/main.cpp">
+			<Option target="test" />
+			<Option target="test_r" />
+		</Unit>
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+			<lib_finder disable_auto="1" />
+			<DoxyBlocks>
+				<comment_style block="0" line="0" />
+				<doxyfile_project />
+				<doxyfile_build extract_static="1" />
+				<doxyfile_warnings warn_if_undocumented="1" />
+				<doxyfile_output />
+				<doxyfile_dot class_diagrams="1" />
+				<general use_at_in_tags="1" />
+			</DoxyBlocks>
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

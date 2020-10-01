@@ -13,6 +13,7 @@ target_include_directories(threading INTERFACE
 	$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>  
     $<INSTALL_INTERFACE:include>
 )
+target_include_directories(threading PRIVATE include)
 
 add_library(nlib::threading ALIAS threading)
 

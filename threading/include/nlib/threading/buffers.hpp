@@ -6,6 +6,20 @@ namespace Nlib
 {
 	namespace Threading
 	{
+		class CyclicIndex
+		{
+		public:
+			CyclicIndex& operator ++ () noexcept;
+			bool operator == (const CyclicIndex& t) const noexcept;
+			bool operator > (const CyclicIndex& t) const noexcept;
+			bool operator >= (const CyclicIndex& t) const noexcept;
+
+			CyclicIndex() : index(0) {}
+			CyclicIndex(const CyclicIndex&) = default;
+		private:
+			uint32_t index;
+		};
+
 		template<typename T> class TrippleBuffer
 		{
 		public:

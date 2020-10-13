@@ -4,16 +4,16 @@ set(THREADING_SOURCES
 )
 
 set(THREADING_HEADERS
-	include/nlib/threading/buffers.hpp
+	../include/nlib/threading/buffers.hpp
 )
 
 add_library(threading ${THREADING_SOURCES} ${THREADING_HEADERS})
 
 target_include_directories(threading INTERFACE
-	$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>  
+	$<BUILD_INTERFACE:${CMAKE_SOURCE_DIR}/include>  
     $<INSTALL_INTERFACE:include>
 )
-target_include_directories(threading PRIVATE include)
+target_include_directories(threading PRIVATE ${CMAKE_SOURCE_DIR}/include)
 
 add_library(nlib::threading ALIAS threading)
 

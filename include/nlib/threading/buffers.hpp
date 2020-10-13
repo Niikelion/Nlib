@@ -14,6 +14,16 @@ namespace Nlib
 			bool operator > (const CyclicIndex& t) const noexcept;
 			bool operator >= (const CyclicIndex& t) const noexcept;
 
+			inline bool operator < (const CyclicIndex& t) const noexcept
+			{
+				return !operator >= (t);
+			}
+
+			inline bool operator <= (const CyclicIndex& t) const noexcept
+			{
+				return !operator > (t);
+			}
+
 			CyclicIndex() : index(0) {}
 			CyclicIndex(const CyclicIndex&) = default;
 		private:
